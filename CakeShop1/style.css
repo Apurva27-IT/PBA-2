@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fceabb, #f8b500);
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(90deg, #d2691e, #ff7e00);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffe066;
+    text-shadow: 0 0 5px #ffe066;
+}
+
+section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.cake-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.cake-item {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.cake-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.cake-item img {
+    max-width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.cake-item:hover img {
+    transform: scale(1.05);
+}
+
+.price {
+    font-weight: 700;
+    color: #d2691e;
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+form label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.cake-options {
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.cake-options label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1em;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.cake-options label:hover {
+    color: #d2691e;
+}
+
+.cake-radio-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.cake-options input[type="radio"] {
+    display: none;
+}
+
+.cake-options input[type="radio"]:checked + .cake-radio-img {
+    border-color: #d2691e;
+    transform: scale(1.1);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 2px solid #d2691e;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus {
+    border-color: #ff7e00;
+    box-shadow: 0 0 8px #ff7e00;
+    outline: none;
+}
+
+form button {
+    margin-top: 30px;
+    background: linear-gradient(90deg, #d2691e, #ff7e00);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 700;
+    box-shadow: 0 6px 15px rgba(255, 126, 0, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(90deg, #ff7e00, #d2691e);
+    box-shadow: 0 8px 20px rgba(210, 105, 30, 0.8);
+}
+
+#orderMessage {
+    margin-top: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #d2691e;
+}
+
+#confirmation {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.3em;
+    color: #d2691e;
+    font-weight: 700;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

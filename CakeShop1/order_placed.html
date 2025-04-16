@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Order Confirmation - Cake Shop</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Thank you for your order!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="confirmation">
+        <h2>Order Confirmation</h2>
+        <p id="confirmationMessage"></p>
+    </section>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split("&").forEach(function(pair) {
+                const [key, value] = pair.split("=");
+                if (key) {
+                    params[decodeURIComponent(key)] = decodeURIComponent(value || "");
+                }
+            });
+            return params;
+        }
+
+        const params = getQueryParams();
+        const messageEl = document.getElementById("confirmationMessage");
+
+        if (params.name && params.cake && params.quantity) {
+            messageEl.textContent = `Hi ${params.name}, your order for ${params.quantity} ${params.cake}${params.quantity > 1 ? 's' : ''} has been received. We will contact you shortly!`;
+        } else {
+            messageEl.textContent = "No order details found.";
+        }
+    </script>
+</body>
+</html>
